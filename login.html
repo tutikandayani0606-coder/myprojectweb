@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>Simulasi Portal e-SPPT</title></head>
+<body style="font-family:sans-serif; margin:40px;">
+    <h2>Portal Login e-SPPT Pajak Daerah</h2>
+    <div id="sukses" style="display:none; border:2px solid green; padding:20px; background-color:#e6ffe6; margin-bottom:20px;">
+        <h3 style="color:green;">PROSES BERHASIL: Selamat Datang di Dashboard e-SPPT!</h3>
+        <p><b>Nama Wajib Pajak:</b> Administrator Lab</p>
+        <p><b>Status Akun:</b> Terautentikasi (Valid)</p>
+    </div>
+    <form id="formLogin" onsubmit="event.preventDefault(); document.getElementById('sukses').style.display='block';">
+        <p>Masukkan User ID:<br><input type="text" required></p>
+        <p>Masukkan Password:<br><input type="password" required></p>
+        <button type="submit">Masuk ke Sistem</button>
+    </form>
+</body>
+</html>
