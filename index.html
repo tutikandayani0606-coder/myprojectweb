@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simulasi Portal e-SPPT</title>
+</head>
+<body style="font-family:sans-serif; margin:40px;">
+    <h2>Portal Login e-SPPT Pajak Daerah</h2>
+    
+    <!-- Kotak Pesan Keberhasilan -->
+    <div id="kotakSukses" style="display:none; border:2px solid green; padding:20px; background-color:#e6ffe6; margin-bottom:20px;">
+        <h3 style="color:green;">PROSES BERHASIL: Selamat Datang di Dashboard e-SPPT!</h3>
+        <p><b>Nama Wajib Pajak:</b> Administrator Lab</p>
+        <p><b>Status Akun:</b> Terautentikasi (Valid)</p>
+    </div>
+
+    <!-- Kotak Pesan Eror Gagal -->
+    <div id="kotakGagal" style="display:none; color:red; margin-bottom:20px;">
+        <b>Gagal: Kombinasi User ID dan Password Anda Salah!</b>
+    </div>
+
+    <!-- Formulir Login Utama -->
+    <form id="formLogin">
+        <p>Masukkan User ID:<br>
+        <input type="text" id="username" placeholder="Contoh: admin 123" required></p>
+        <p>Masukkan Password:<br>
+        <input type="password" id="password" required></p>
+        <button type="submit">Masuk ke Sistem</button>
+    </form>
+
+    <script>
+        document.getElementById('formLogin').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            
+            var user = document.getElementById('username').value;
+            var pass = document.getElementById('password').value;
+            
+            if (user === "admin 123" && pass === "123") {
+                document.getElementById('kotakSukses').style.display = 'block';
+                document.getElementById('kotakGagal').style.display = 'none';
+                document.getElementById('formLogin').style.display = 'none'; 
+            } else {
+                document.getElementById('kotakGagal').style.display = 'block';
+                document.getElementById('kotakSukses').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
